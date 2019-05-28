@@ -12,14 +12,41 @@ private let ProductIdentifier = "ProductCollectionViewCell"
 
 class HomeViewController: UIViewController {
     
+    let filterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "TuneItem"), for: .normal)
+        return button
+    }()
+    
+    let searchButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "SearchItem"), for: .normal)
+        return button
+    }()
+    
+    let menuButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "MenuItem"), for: .normal)
+        return button
+    }()
+    
     var Homeptoduct: [Product] = Catalog.products
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Home"
+        setupNav()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: ProductIdentifier, bundle: nil), forCellWithReuseIdentifier: ProductIdentifier)
+    }
+    
+    func setupNav() {
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterButton), UIBarButtonItem(customView: searchButton)]
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
     }
 }
 
