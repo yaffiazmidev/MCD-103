@@ -13,7 +13,7 @@ class CustomTextField: UITextField {
     let placeholderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 16, y: 16, width: 200, height: 21)
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.init(name: "Chalkduster", size: 13)
         label.textColor = .gray
         return label
     }()

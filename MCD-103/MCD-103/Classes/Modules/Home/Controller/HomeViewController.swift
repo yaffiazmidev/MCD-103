@@ -38,7 +38,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9843137255, blue: 0.9803921569, alpha: 1)
         self.title = "Home"
         setupNav()
         collectionView.delegate = self
@@ -47,6 +46,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupNav() {
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.3622560501, green: 0.05465266854, blue: 0.2908532917, alpha: 1)
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterItem), UIBarButtonItem(customView: searchItem)]
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuItem)
     }
