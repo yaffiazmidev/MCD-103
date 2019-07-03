@@ -10,10 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var shrineIcon: UIImageView!
     @IBOutlet weak var usernameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        shrineIcon.image = shrineIcon.image?.withRenderingMode(.alwaysTemplate)
+        shrineIcon.tintColor = #colorLiteral(red: 0.2666666667, green: 0.1725490196, blue: 0.1803921569, alpha: 1)
         setupTextField()
     }
 

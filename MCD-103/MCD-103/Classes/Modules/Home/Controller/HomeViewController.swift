@@ -12,22 +12,25 @@ private let ProductIdentifier = "ProductCollectionViewCell"
 
 class HomeViewController: UIViewController {
     
-    let filterButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "TuneItem"), for: .normal)
-        return button
+    let filterItem: UIImageView = {
+        let item = UIImageView()
+        item.image = #imageLiteral(resourceName: "TuneItem")
+        item.image = item.image?.withRenderingMode(.alwaysTemplate)
+        return item
     }()
     
-    let searchButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "SearchItem"), for: .normal)
-        return button
+    let searchItem: UIImageView = {
+        let item = UIImageView()
+        item.image = #imageLiteral(resourceName: "SearchItem")
+        item.image = item.image?.withRenderingMode(.alwaysTemplate)
+        return item
     }()
     
-    let menuButton: UIButton = {
-        let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "MenuItem"), for: .normal)
-        return button
+    let menuItem: UIImageView = {
+        let item = UIImageView()
+        item.image = #imageLiteral(resourceName: "MenuItem")
+        item.image = item.image?.withRenderingMode(.alwaysTemplate)
+        return item
     }()
     
     var Homeptoduct: [Product] = Catalog.products
@@ -35,6 +38,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.9843137255, blue: 0.9803921569, alpha: 1)
         self.title = "Home"
         setupNav()
         collectionView.delegate = self
@@ -43,10 +47,8 @@ class HomeViewController: UIViewController {
     }
     
     func setupNav() {
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.barTintColor = .black
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterButton), UIBarButtonItem(customView: searchButton)]
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterItem), UIBarButtonItem(customView: searchItem)]
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuItem)
     }
 }
 

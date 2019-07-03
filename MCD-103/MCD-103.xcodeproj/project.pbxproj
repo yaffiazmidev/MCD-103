@@ -137,8 +137,8 @@
 		20A1A129229CEB9F00E8CA1F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20A1A12A229CEB9F00E8CA1F /* ProductCollectionViewCell.xib */,
 				20A1A12B229CEB9F00E8CA1F /* ProductCollectionViewCell.swift */,
+				20A1A12A229CEB9F00E8CA1F /* ProductCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,8 +146,8 @@
 		20A1A12C229CEB9F00E8CA1F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				20A1A12D229CEB9F00E8CA1F /* LoginViewController.xib */,
 				20A1A12E229CEB9F00E8CA1F /* LoginViewController.swift */,
+				20A1A12D229CEB9F00E8CA1F /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
